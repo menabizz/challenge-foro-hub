@@ -1,4 +1,4 @@
-package challenge_foro_hub.domain;
+package challenge_foro_hub.infra.exceptions;
 
 public class ValidacionException extends RuntimeException {
 
