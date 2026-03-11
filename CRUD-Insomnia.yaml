@@ -1,0 +1,236 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: My first collection
+meta:
+  id: wrk_d2407f16e9354bb7acc432da250aebb3
+  created: 1773102179747
+  modified: 1773102179747
+  description: ""
+collection:
+  - name: Topicos
+    meta:
+      id: fld_f12fbc224bdd4547b4cb73851a1ddfb1
+      created: 1773173315259
+      modified: 1773173315259
+      sortKey: -1773173315259
+      description: ""
+    children:
+      - url: localhost:8080/topicos/3
+        name: Listar Topicos
+        meta:
+          id: req_489f9b2b03bd4c2ca8516db3e33396e6
+          created: 1773102179775
+          modified: 1773173338647
+          isPrivate: false
+          description: ""
+          sortKey: -1773173337121
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGFsbGVuZ2UtZm9yby1odWIiLCJzdWIiOiJhbHVtbm9AZW1haWwuY29tIiwiZXhwIjoxNzczMTc2OTA4fQ.E6NFMns_YWHDSFNZkK8fuBkWQp7oTnzRlMRcP_8ZmoU
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/topicos
+        name: Registrar Topico
+        meta:
+          id: req_78673375cc3f443493506130245ab8cc
+          created: 1773102294182
+          modified: 1773177782007
+          isPrivate: false
+          description: ""
+          sortKey: -1773173337221
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"usuario_Id":"3",
+            	"mensaje":"Probando mocrofono",
+            	"curso" : "Springwork",
+            	"titulo" : "EH?",
+            	"status": "ACTIVO"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _['TOKEN FOROHUB'].bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/topicos/1
+        name: Actualizar Topico
+        meta:
+          id: req_5537034d13804f629adf43610b67fd01
+          created: 1773102532709
+          modified: 1773173343095
+          isPrivate: false
+          description: ""
+          sortKey: -1773173337021
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "id": 1,
+              "titulo": "Problema con autenticación JWT",
+              "mensaje": "El error se debía a que el secret no coincidía",
+              "status": "ACTIVO",
+              "usuario_Id": 1,
+              "curso": "Spring Security"
+             
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _['TOKEN FOROHUB'].bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/topicos/2
+        name: Eliminar Topico
+        meta:
+          id: req_bd6bf1fba97046e5884e5fd923896310
+          created: 1773102554416
+          modified: 1773173348469
+          isPrivate: false
+          description: ""
+          sortKey: -1773173336921
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGFsbGVuZ2UtZm9yby1odWIiLCJzdWIiOiJhbHVtbm9AZW1haWwuY29tIiwiZXhwIjoxNzczMTc2OTA4fQ.E6NFMns_YWHDSFNZkK8fuBkWQp7oTnzRlMRcP_8ZmoU
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Usuarios
+    meta:
+      id: fld_66cf5ac189ae4ab7abf9e92aee79a408
+      created: 1773173321120
+      modified: 1773173321120
+      sortKey: -1773173321120
+      description: ""
+    children:
+      - url: localhost:8080/auth
+        name: Autenticación
+        meta:
+          id: req_59aff2e5a53843b6a952e533b26172c3
+          created: 1773102445404
+          modified: 1773177752382
+          isPrivate: false
+          description: ""
+          sortKey: -1773173456575
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email":"alumno@email.com",
+            	"password":"123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/registro
+        name: REGISTRO
+        meta:
+          id: req_64d059ba5bed4ae09b52b16e2975ceac
+          created: 1773173456475
+          modified: 1773177732610
+          isPrivate: false
+          description: ""
+          sortKey: -1773173456675
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nombre": "Pablo Sanchez",
+              "email": "pablo@email.com",
+              "password": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_71380c2656e13412ab9bbb6582cc830e4541a534
+    created: 1773102179758
+    modified: 1773102179758
+environments:
+  name: Base Environment
+  meta:
+    id: env_71380c2656e13412ab9bbb6582cc830e4541a534
+    created: 1773102179755
+    modified: 1773177762975
+    isPrivate: false
+  data:
+    TOKEN FOROHUB:
+      bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGFsbGVuZ2UtZm9yby1odWIiLCJzdWIiOiJhbHVtbm9AZW1haWwuY29tIiwiZXhwIjoxNzczMTg0OTUyfQ.Nxn39_AH5ccqQqIzZhNunqOCbdJVtZ8KWE_Fj2A0Xuo
